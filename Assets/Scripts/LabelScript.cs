@@ -19,11 +19,13 @@ public class LabelScript : MonoBehaviour
     public float indicatorLineWidth;
     public bool showAllText=true;
 
+    public float dotMul, textWindowMul;
+
 
     [SerializeField]
     private List<GameObject> labels;
     private GameObject label;
-    private GameObject dot, textWindowBackground,textWindow;
+    private Transform dot, textWindowBackground,textWindow;
 
     public string labelText;
     [SerializeField]
@@ -34,10 +36,14 @@ public class LabelScript : MonoBehaviour
     //Set default value for label maker
     private void Reset()
     {
+
         
-        
-        label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
-        dot = label.transform.Find("LabelDotBackground").gameObject;
+       label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
+        textWindow = label.transform.Find("TextWindow");
+        textWindowBackground = textWindow.Find("TextBackground");
+        dot = label.transform.Find("LabelDotBackground");
+        dotMul = dot.localScale.x;
+        textWindowMul = textWindow.localScale.x;
         labelTexts = new List<string>();
         labels = new List<GameObject>();
         dotPosition = new List<Vector3>();
@@ -52,17 +58,33 @@ public class LabelScript : MonoBehaviour
 
         //set prefab dirty
         if (label == null)
-            label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
-        textWindowBackground = label.transform.Find("TextWindow").Find("TextBackground").gameObject;
-        textWindowBackground.GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
-        EditorUtility.SetDirty(textWindowBackground);
-        
-        //change line width in exsisting labels
-        foreach(GameObject _label in labels)
         {
-            _label.GetComponentInChildren<LineRenderer>().widthMultiplier = indicatorLineWidth;
+            //label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
+            Debug.Log("Cannot load label, please reset the script from inspector");
+            return;
+        }
+
+
+
+        Undo.RecordObject(label.transform, "make change to the line width, txetwindow and dot size");
+        textWindow.localScale = new Vector3(textWindowMul, textWindowMul, textWindowMul);
+        dot.transform.localScale = new Vector3(dotMul,dotMul,dotMul);
+        textWindowBackground.GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
+        PrefabUtility.RecordPrefabInstancePropertyModifications(label.transform);
+
+        //change line width in exsisting labels
+        if (labels.Count > 0)
+        {
+            foreach (GameObject _label in labels)
+            {
+                _label.GetComponentInChildren<LineRenderer>().widthMultiplier = indicatorLineWidth;
+                _label.transform.Find("LabelDotBackground").localScale = new Vector3(dotMul, dotMul, dotMul);
+                _label.transform.Find("TextWindow").localScale = new Vector3(textWindowMul, textWindowMul, textWindowMul);
+            }
         }
     }
+        
+        
     public void AddLabel(Vector3 labelPosition,Vector3 surfaceNormal)
     {
         if (!string.IsNullOrEmpty(labelText))
@@ -80,7 +102,7 @@ public class LabelScript : MonoBehaviour
             newlabel.transform.Find("LabelDotBackground").rotation = Quaternion.LookRotation(-surfaceNormal);
             newlabel.transform.Find("TextWindow").position = labelPosition + surfaceNormal;
             newlabel.transform.Find("LabelDotBackground").Find("LabelIndex").GetComponent<TextMeshPro>().text = labelTexts.Count.ToString();
-            newlabel.transform.Find("TextWindow").Find("TextBackground").GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
+            //newlabel.transform.Find("TextWindow").Find("TextBackground").GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
             newlabel.GetComponent<LabelTextManager>().showText(showAllText);
             dotPosition.Add(newlabel.transform.Find("LabelDotBackground").position);
             textWindowPosition.Add(newlabel.transform.Find("TextWindow").position);
