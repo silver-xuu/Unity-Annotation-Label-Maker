@@ -27,6 +27,7 @@ The Tool is made for artist/developer to quickly add annotation label onto a 3D 
  ![](ScreenCaptures/RequireClickMessage.png)
  
  6. Label is created automatically
+ ![](ScreenCaptures/LabelCreated.png)
 
    *Number on the label dot increment automatically*
   ### Making Changes
