@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1819428896891132787}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.2923553, y: 0.100369036, z: -1.5848876}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 943551960168731703}
   - {fileID: 5210317411254441216}
@@ -170,7 +170,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: -0.137, z: -0.415}
-  - {x: 1.468248, y: 0.3811, z: -0.94633996}
+  - {x: 1.4153681, y: 0.2549, z: -0.59468997}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1
@@ -380,12 +380,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25
+  m_fontSize: 3.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 10
-  m_fontSizeMax: 25
+  m_fontSizeMin: 1
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.5296626, y: 0, z: 7.652293, w: 0}
+  m_margin: {x: 9.794648, y: 2.340276, z: 9.792025, w: 2.316935}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 1
@@ -554,7 +554,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6987953281913118803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.14066005}
+  m_LocalPosition: {x: 0, y: 0, z: 0.14066}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 2613630478252784161}
@@ -562,7 +562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.02115202, y: -0.050480008}
+  m_AnchoredPosition: {x: -0.021151984, y: -0.050479997}
   m_SizeDelta: {x: 0.04, y: 0.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7686712844822160357
@@ -638,7 +638,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: silver is awsome
+  m_text: Don't poop on my keyboard, you stupid cat!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3.85
+  m_fontSize: 3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 38
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -707,12 +707,12 @@ MonoBehaviour:
   m_margin: {x: -1.3422161, y: -0.19072507, z: -1.4606906, w: -0.12078692}
   m_textInfo:
     textComponent: {fileID: 3679441005073301422}
-    characterCount: 16
+    characterCount: 42
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 7
+    wordCount: 8
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 1087469031858590439}
   - component: {fileID: 9168495002709387071}
   - component: {fileID: 1858873228075961631}
-  - component: {fileID: 2536315040889344616}
+  - component: {fileID: 3764619592863897586}
   m_Layer: 0
   m_Name: LabelDotBackground
   m_TagString: Untagged
@@ -807,7 +807,7 @@ Transform:
   m_GameObject: {fileID: 8680261474816176820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.1970447, y: -0.46821097, z: -0.9128876}
-  m_LocalScale: {x: 0.022164457, y: 0.022164457, z: 0.022164457}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 6407536604453311694}
   m_Father: {fileID: 3131513498710064877}
@@ -877,7 +877,7 @@ MonoBehaviour:
   update: 1
   lookForMainCamera: 1
   cameraTransform: {fileID: 0}
---- !u!135 &2536315040889344616
+--- !u!135 &3764619592863897586
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -888,5 +888,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.59
-  m_Center: {x: 0, y: 0.00000047683716, z: 0}
+  m_Radius: 0.259
+  m_Center: {x: 0, y: 0, z: 0}

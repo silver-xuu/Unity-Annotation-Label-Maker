@@ -14,6 +14,7 @@ public class LabelScriptEditor : Editor
     bool showWindow = false;
     bool startTrackingMouse = false;
     
+    
     //GUI displayed on scene
     public void OnSceneGUI()
     {
@@ -31,7 +32,9 @@ public class LabelScriptEditor : Editor
         }
         //change the width of indicator line
         EditorGUI.BeginChangeCheck();
-        mytarget.indicatorLineWidth = EditorGUILayout.Slider("Indicator Line width", mytarget.indicatorLineWidth, 0.1f, 1f, GUILayout.Width(200));
+        mytarget.indicatorLineWidth = EditorGUILayout.Slider("Indicator Line width", mytarget.indicatorLineWidth, 0.1f, 5f, GUILayout.Width(200));
+        mytarget.dotMul =EditorGUILayout.Slider("Dot Size multiplier", mytarget.dotMul, 0.1f, 50f, GUILayout.Width(200));
+        mytarget.textWindowMul = EditorGUILayout.Slider("Text Window Size multiplier", mytarget.textWindowMul, 0.1f, 50f, GUILayout.Width(200));
         if (GUI.changed)
         {
             mytarget.ChangeLabelPrefab();
@@ -40,18 +43,12 @@ public class LabelScriptEditor : Editor
         //display popup window for adding new label
         if (showWindow)
         {
-            Rect windowSize = new Rect((Screen.width - 400) / 2, (Screen.height - 200) / 2, 300, 100);
-            GUI.Window(0, windowSize , LabelNameWindow,"Enter Label Name");
+            Rect windowSize = new Rect(0, 100, 300, 100);
+            Rect Window= GUI.Window(0, windowSize , LabelNameWindow,"Enter Label Name");
+            Debug.Log(Window);
         }
         
-        //if user wants to display the label text
-        EditorGUI.BeginChangeCheck();
-        mytarget.showAllText = EditorGUILayout.Toggle("Show All Label Text", mytarget.showAllText);
-        if (GUI.changed)
-        {
-            mytarget.showAllLabelText(mytarget.showAllText);
-        }
-        EditorGUI.EndChangeCheck();
+        
         //after entering the name of new label, system will track mouse click to place the label
         if (startTrackingMouse)
         {
@@ -71,7 +68,16 @@ public class LabelScriptEditor : Editor
             
             startTrackingMouse = false;
         }
-        
+
+        //if user wants to display the label text
+        EditorGUI.BeginChangeCheck();
+        mytarget.showAllText = EditorGUILayout.Toggle("Show All Label Text", mytarget.showAllText);
+        if (GUI.changed)
+        {
+            mytarget.showAllLabelText(mytarget.showAllText);
+        }
+        EditorGUI.EndChangeCheck();
+
         Handles.EndGUI();
     }
     
@@ -81,6 +87,7 @@ public class LabelScriptEditor : Editor
         GetTarget = new SerializedObject(mytarget);
         list= GetTarget.FindProperty("labelTexts");
     }
+    
     //display some info about the label on the inspector
     public override void OnInspectorGUI()
     {
