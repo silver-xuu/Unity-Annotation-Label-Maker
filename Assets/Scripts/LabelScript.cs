@@ -102,7 +102,7 @@ public class LabelScript : MonoBehaviour
             newlabel.transform.Find("LabelDotBackground").rotation = Quaternion.LookRotation(-surfaceNormal);
             newlabel.transform.Find("TextWindow").position = labelPosition + surfaceNormal;
             newlabel.transform.Find("LabelDotBackground").Find("LabelIndex").GetComponent<TextMeshPro>().text = labelTexts.Count.ToString();
-            //newlabel.transform.Find("TextWindow").Find("TextBackground").GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
+            // newlabel.transform.Find("TextWindow").Find("TextBackground").GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
             newlabel.GetComponent<LabelTextManager>().showText(showAllText);
             dotPosition.Add(newlabel.transform.Find("LabelDotBackground").position);
             textWindowPosition.Add(newlabel.transform.Find("TextWindow").position);

@@ -45,30 +45,9 @@ public class LabelScriptEditor : Editor
         {
             Rect windowSize = new Rect(0, 100, 300, 100);
             Rect Window= GUI.Window(0, windowSize , LabelNameWindow,"Enter Label Name");
-            Debug.Log(Window);
         }
         
-        
-        //after entering the name of new label, system will track mouse click to place the label
-        if (startTrackingMouse)
-        {
-            EditorGUILayout.HelpBox("Now, click on where you want to place the label on the object", MessageType.Info);
-        }
-
-        if (startTrackingMouse&& Event.current.type == EventType.MouseDown )
-        {
-            Vector2 guiPosition = Event.current.mousePosition;
-            Ray ray = HandleUtility.GUIPointToWorldRay(guiPosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray,out hit))
-            {
-                Debug.Log(hit.point);
-                mytarget.AddLabel(hit.point,hit.normal);
-            }
-            
-            startTrackingMouse = false;
-        }
-
+       
         //if user wants to display the label text
         EditorGUI.BeginChangeCheck();
         mytarget.showAllText = EditorGUILayout.Toggle("Show All Label Text", mytarget.showAllText);
@@ -77,6 +56,24 @@ public class LabelScriptEditor : Editor
             mytarget.showAllLabelText(mytarget.showAllText);
         }
         EditorGUI.EndChangeCheck();
+
+        //after entering the name of new label, system will track mouse click to place the label
+        if (startTrackingMouse)
+        {
+            EditorGUILayout.HelpBox("Now, click on where you want to place the label on the object", MessageType.Info);
+        }
+        if (startTrackingMouse && Event.current.type == EventType.MouseDown)
+        {
+            Vector2 guiPosition = Event.current.mousePosition;
+            Ray ray = HandleUtility.GUIPointToWorldRay(guiPosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                mytarget.AddLabel(hit.point, hit.normal);
+            }
+
+            startTrackingMouse = false;
+        }
 
         Handles.EndGUI();
     }
@@ -136,13 +133,13 @@ public class LabelScriptEditor : Editor
     {
         EditorGUILayout.LabelField("Please enter the label name");
         mytarget.labelText = EditorGUILayout.TextField("Label Name", mytarget.labelText);
-        if (mytarget.labelText == "")
+        if (mytarget.labelText.Length == 0)
         {
             EditorGUILayout.HelpBox("Label Name cannot be empty", MessageType.Warning);
         }
         if (GUILayout.Button("Ok",GUILayout.Height(30), GUILayout.Width(200)))
         {
-            if (mytarget.labelText != "")
+            if (mytarget.labelText.Length>0)
             {
                 showWindow = false;
                 //mytarget.AddLabel();
