@@ -5,29 +5,88 @@ using UnityEditor;
 
 
 [CustomEditor(typeof(LabelScript))]
+
 public class LabelScriptEditor : Editor
 {
     private LabelScript mytarget;
     SerializedProperty list;
     SerializedObject GetTarget;
+    bool showWindow = false;
+    bool startTrackingMouse = false;
+    
+    //GUI displayed on scene
+    public void OnSceneGUI()
+    {
+        Handles.BeginGUI();
+
+        //add new label button, click it will pops up another window
+        if (GUILayout.Button("Add new Label", GUILayout.Height(30), GUILayout.Width(200)))
+        {
+            showWindow = true;
+        }
+        //delete last added label
+        if (GUILayout.Button("Delete Last Label", GUILayout.Height(30), GUILayout.Width(200)))
+        {
+            mytarget.DeleteLastLabel();
+        }
+        //change the width of indicator line
+        EditorGUI.BeginChangeCheck();
+        mytarget.indicatorLineWidth = EditorGUILayout.Slider("Indicator Line width", mytarget.indicatorLineWidth, 0.1f, 1f, GUILayout.Width(200));
+        if (GUI.changed)
+        {
+            mytarget.ChangeLabelPrefab();
+        }
+        EditorGUI.EndChangeCheck();
+        //display popup window for adding new label
+        if (showWindow)
+        {
+            Rect windowSize = new Rect((Screen.width - 400) / 2, (Screen.height - 200) / 2, 300, 100);
+            GUI.Window(0, windowSize , LabelNameWindow,"Enter Label Name");
+        }
+        
+        //if user wants to display the label text
+        EditorGUI.BeginChangeCheck();
+        mytarget.showAllText = EditorGUILayout.Toggle("Show All Label Text", mytarget.showAllText);
+        if (GUI.changed)
+        {
+            mytarget.showAllLabelText(mytarget.showAllText);
+        }
+        EditorGUI.EndChangeCheck();
+        //after entering the name of new label, system will track mouse click to place the label
+        if (startTrackingMouse)
+        {
+            EditorGUILayout.HelpBox("Now, click on where you want to place the label on the object", MessageType.Info);
+        }
+
+        if (startTrackingMouse&& Event.current.type == EventType.MouseDown )
+        {
+            Vector2 guiPosition = Event.current.mousePosition;
+            Ray ray = HandleUtility.GUIPointToWorldRay(guiPosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray,out hit))
+            {
+                Debug.Log(hit.point);
+                mytarget.AddLabel(hit.point,hit.normal);
+            }
+            
+            startTrackingMouse = false;
+        }
+        
+        Handles.EndGUI();
+    }
+    
     private void OnEnable()
     {
          mytarget = (LabelScript)target;
         GetTarget = new SerializedObject(mytarget);
         list= GetTarget.FindProperty("labelTexts");
     }
+    //display some info about the label on the inspector
     public override void OnInspectorGUI()
     {
 
-        //mytarget.customTextBackground = (Sprite)EditorGUIUtility.Load("/Sprite/square");
         GetTarget.Update();
-        //mytarget.customTextBackground = (Sprite)EditorGUILayout.ObjectField("Text Background", mytarget.customTextBackground, typeof(Sprite), allowSceneObjects: true);
-        //mytarget.cutomLabelDotBackground = (Sprite)EditorGUILayout.ObjectField("Dot Background", mytarget.cutomLabelDotBackground, typeof(Sprite), allowSceneObjects: true);
-        //mytarget.labelDotSize=EditorGUILayout.Vector3Field("Dot Size", mytarget.labelDotSize);
-        //mytarget.labelWindowSize=EditorGUILayout.Vector3Field("Text Window Size", mytarget.labelWindowSize);
 
-        mytarget.LineColor = EditorGUILayout.ColorField("Line Color", mytarget.LineColor);
-        mytarget.indicatorLineWidth = EditorGUILayout.Slider("Line width", mytarget.indicatorLineWidth, 0.1f, 1f);
         EditorGUILayout.Space();
         EditorGUILayout.Space();
 
@@ -39,14 +98,15 @@ public class LabelScriptEditor : Editor
             EditorGUILayout.EndHorizontal();
             for (int i = 0; i < listsize; i++)
             {
+                EditorGUI.BeginChangeCheck();
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField((i+1).ToString());
                 EditorGUILayout.LabelField(list.GetArrayElementAtIndex(i).stringValue);
                 EditorGUILayout.EndHorizontal();
-                EditorGUI.BeginChangeCheck();
+                
                 mytarget.dotPosition[i]=EditorGUILayout.Vector3Field("Dot Position", mytarget.dotPosition[i]);
                 mytarget.textWindowPosition[i]=EditorGUILayout.Vector3Field("Text Position", mytarget.textWindowPosition[i]);
-                if (GUI.changed)
+                if (GUI.changed) 
                 {
                     mytarget.ChangePosition(i);
                 }
@@ -56,20 +116,35 @@ public class LabelScriptEditor : Editor
             EditorGUILayout.Space();
             EditorGUILayout.Space();
         }
-
-        mytarget.labelText=EditorGUILayout.TextField("Label Text", mytarget.labelText);
-        
-        if (GUILayout.Button("Add new Label", GUILayout.Height(50)))
+        else
         {
-            mytarget.AddLabel();
+            EditorGUILayout.HelpBox("Label Information will be displayed here", MessageType.Info);
         }
-        if(GUILayout.Button("Delete Last Label", GUILayout.Height(50))){
-            mytarget.DeleteLastLabel();
-        }
+        
+        
+        
     }
-    /*public void OnInspectorUpdate()
+    //contents of the label name window
+    public void LabelNameWindow(int windowID)
     {
-        LabelScript mytarget = (LabelScript)target;
-        mytarget.ChangeLabelPrefab();
-    }*/
+        EditorGUILayout.LabelField("Please enter the label name");
+        mytarget.labelText = EditorGUILayout.TextField("Label Name", mytarget.labelText);
+        if (mytarget.labelText == "")
+        {
+            EditorGUILayout.HelpBox("Label Name cannot be empty", MessageType.Warning);
+        }
+        if (GUILayout.Button("Ok",GUILayout.Height(30), GUILayout.Width(200)))
+        {
+            if (mytarget.labelText != "")
+            {
+                showWindow = false;
+                //mytarget.AddLabel();
+                startTrackingMouse = true;
+            }
+            
+            
+        }
+
+    }
+   
 }

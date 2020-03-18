@@ -7,24 +7,19 @@ using UnityEditor.SceneManagement;
 using TMPro;
 
 
+[RequireComponent(typeof(MeshCollider))]
 
 public class LabelScript : MonoBehaviour
 {
-    /*public Sprite cutomLabelDotBackground;
-    public Sprite customTextBackground;*/
 
     public Color TextBackgroundColor;
 
     public Color LineColor;
 
     public float indicatorLineWidth;
+    public bool showAllText=true;
 
 
-
-    //public Vector3 labelDotSize;
-    //public Vector3 labelWindowSize;
-
-    //private Vector3 defaultDotSize,defaultWidowsize;
     [SerializeField]
     private List<GameObject> labels;
     private GameObject label;
@@ -40,38 +35,35 @@ public class LabelScript : MonoBehaviour
     private void Reset()
     {
         
-        //customTextBackground = Resources.Load<Sprite>("Sprite/square") as Sprite;
-        //cutomLabelDotBackground = Resources.Load<Sprite>("Sprite/LabelDot") as Sprite;
+        
         label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
         dot = label.transform.Find("LabelDotBackground").gameObject;
         labelTexts = new List<string>();
         labels = new List<GameObject>();
         dotPosition = new List<Vector3>();
         textWindowPosition = new List<Vector3>();
-        /*defaultDotSize = new Vector3(0.1148119f, 0.1148119f, 0.004432891f);
-        defaultWidowsize = new Vector3(1.757971f, 0.2262859f, 0.06415f);
-        labelDotSize = defaultDotSize;*/
-        //labelDotSize =dot.GetComponent<SpriteRenderer>().bounds.size;
-        //labelWindowSize = textWindowBackground.GetComponent<SpriteRenderer>().bounds.size;
+        
 
     }
 
     public void ChangeLabelPrefab()
     {
-        Undo.RecordObject(label, "Make Changes in Editor");
 
+
+        //set prefab dirty
+        if (label == null)
+            label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
         textWindowBackground = label.transform.Find("TextWindow").Find("TextBackground").gameObject;
         textWindowBackground.GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
-
-        // Notice that if the call to RecordPrefabInstancePropertyModifications is not present,
-        // all changes to scale will be lost when saving the Scene, and reopening the Scene
-        // would revert the scale back to its previous value.
-        PrefabUtility.RecordPrefabInstancePropertyModifications(label.transform);
-
-        // Optional step in order to save the Scene changes permanently.
-        EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
+        EditorUtility.SetDirty(textWindowBackground);
+        
+        //change line width in exsisting labels
+        foreach(GameObject _label in labels)
+        {
+            _label.GetComponentInChildren<LineRenderer>().widthMultiplier = indicatorLineWidth;
+        }
     }
-    public void AddLabel()
+    public void AddLabel(Vector3 labelPosition,Vector3 surfaceNormal)
     {
         if (!string.IsNullOrEmpty(labelText))
         {
@@ -79,11 +71,17 @@ public class LabelScript : MonoBehaviour
                 label = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
             GameObject newlabel = Instantiate(label, this.transform);
 
-            newlabel.name = labelText;
+            newlabel.name = "label_" +labelText;
             newlabel.transform.Find("TextWindow").Find("LabelText").GetComponent<TextMeshPro>().text = labelText;
             labelTexts.Add(labelText);
             labels.Add(newlabel);
+           
+            newlabel.transform.Find("LabelDotBackground").position = labelPosition + surfaceNormal*0.05f;
+            newlabel.transform.Find("LabelDotBackground").rotation = Quaternion.LookRotation(-surfaceNormal);
+            newlabel.transform.Find("TextWindow").position = labelPosition + surfaceNormal;
             newlabel.transform.Find("LabelDotBackground").Find("LabelIndex").GetComponent<TextMeshPro>().text = labelTexts.Count.ToString();
+            newlabel.transform.Find("TextWindow").Find("TextBackground").GetComponent<LineRenderer>().widthMultiplier = indicatorLineWidth;
+            newlabel.GetComponent<LabelTextManager>().showText(showAllText);
             dotPosition.Add(newlabel.transform.Find("LabelDotBackground").position);
             textWindowPosition.Add(newlabel.transform.Find("TextWindow").position);
 
@@ -107,16 +105,22 @@ public class LabelScript : MonoBehaviour
     }
     public void ChangePosition(int i)
     {
+        
         Transform dotTrans = labels[i].transform.Find("LabelDotBackground");
         Transform windowTrans = labels[i].transform.Find("TextWindow");
         dotTrans.position = dotPosition[i];
         windowTrans.position = textWindowPosition[i];
 
     }
-
-    public void ShowTextWindow()
+    public void showAllLabelText(bool value)
     {
-
+        if (labels == null)
+            return;
+        foreach (GameObject _label in labels)
+        {
+            _label.GetComponent<LabelTextManager>().showText(value);
+        }
     }
+
 
 }
