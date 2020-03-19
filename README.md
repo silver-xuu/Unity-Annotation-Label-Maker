@@ -11,19 +11,23 @@ The Tool is made for artist/developer to quickly add annotation label onto a 3D 
 ### Setting up
  1. Open project, import the 3D object into a scene and adjust the object size.
  2. Select the object -> Add Component -> Add "Label Script"
- ![AddComponent](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/AddComponent.png)
+ ![](ScreenCaptures/EnterLabelNameWindow.png)
  3. After Adding the script, now when you select the object, following UI will pop up on Scene view.
- ![LabelMakerUI](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/LabelMakerUI.png)
+ ![](ScreenCaptures/LabelMakerUI.png)
 ### Add new label
  1. Adjust the scene, so that the area where the label needs to be placed can be seen in the scene view.
  2. Click on Add new Label to add label.
  3. A window will pop up asking for the label name, label name will displayed on the object after created, so it cannot be empty
- ![EnterLabelNameWindow](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/EnterLabelNameWindow.png)
- 4.Click on OK button when the label name is entered
- ![EnterLabelNameWindowWithInput](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/EnterLabelNameWindowWithInput.png)
+ ![](ScreenCaptures/EnterLabelNameWindow.png)
+ 
+ 4. Click on OK button when the label name is entered
+  ![](ScreenCaptures/EnterLabelNameWindowWithInput.png)
+ 
  5. Click on the area where the label needs to be placed 
- ![RequireClickMessage](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/RequireClickMessage.png)
+ ![](ScreenCaptures/RequireClickMessage.png)
+ 
  6. Label is created automatically
+ ![](ScreenCaptures/LabelCreated.png)
 
    *Number on the label dot increment automatically*
   ### Making Changes
@@ -38,9 +42,9 @@ The Tool is made for artist/developer to quickly add annotation label onto a 3D 
    #### Change position of labels and label text
    There are two ways of changing position of labels:
    1. select label object under the 3d object, select "TextWindow" or "LabelDotBackground" in the children and move them directly
-   ![LabelDetails](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/LabelDetails.png)
+   ![](ScreenCaptures/LabelDetails.png?raw=true)
    2. Or select the 3d object, on the Inspector window, the label script list out all the labels and the location of label dot and    text, make change to the number directly to change their position
-   ![ScriptInInspector](https://github.com/silver-xuu/Unity-Annotation-Label-Maker/tree/master/ScreenCaptures/ScriptInInspector.png)
+   ![](ScreenCaptures/ScriptInInspector.png)
 
    ### Access value through Script
    To turn on or off all label text use following code `object.GetComonent<LabelScript>().showAllLabelText(bool onOrOff)`
