@@ -45,6 +45,7 @@ public class LabelScript : MonoBehaviour
         dotMul = dot.localScale.x;
         textWindowMul = textWindow.localScale.x;
         labelTexts = new List<string>();
+        labelText ="";
         labels = new List<GameObject>();
         dotPosition = new List<Vector3>();
         textWindowPosition = new List<Vector3>();
