@@ -133,7 +133,7 @@ public class LabelScriptEditor : Editor
     {
         EditorGUILayout.LabelField("Please enter the label name");
         mytarget.labelText = EditorGUILayout.TextField("Label Name", mytarget.labelText);
-        if (mytarget.labelText.Length == 0)
+        if (mytarget.labelText.Length == 0 || mytarget.labelText=="")
         {
             EditorGUILayout.HelpBox("Label Name cannot be empty", MessageType.Warning);
         }
