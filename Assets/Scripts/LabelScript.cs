@@ -60,7 +60,7 @@ public class LabelScript : MonoBehaviour
         prefabLabelManager.SetTextColor(textColor);
         PrefabUtility.RecordPrefabInstancePropertyModifications(labelPrefab.transform);
 
-        //change line width and sizes in exsisting labels
+        //change line width, color, window size and text size in exsisting labels
         if (labels.Count > 0)
         {
             labels.ForEach(x => {

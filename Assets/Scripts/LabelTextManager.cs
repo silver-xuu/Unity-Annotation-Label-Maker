@@ -136,7 +136,7 @@ public class LabelTextManager : MonoBehaviour
     public void DeleteLabel()
     {
         LabelScript parent = this.GetComponentInParent<LabelScript>();
-        if (parent != null)
+        if (parent != null && parent.labels.Contains(this))
             parent.labels.Remove(this);
         DestroyImmediate(this.gameObject);
     }
