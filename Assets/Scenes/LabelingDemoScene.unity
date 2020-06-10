@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,17 +362,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1cbce9520c5e548927c01998c469c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  LineColor: {r: 0, g: 0, b: 0, a: 0}
-  indicatorLineWidth: 0.1
-  showAllText: 1
-  dotMul: 0.29
-  textWindowMul: 0.65
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+  upperText: a
+  bottomText: a
+  showAllLabel: 1
+  dotSize: 0.14
+  textWindowSize: 0.53
+  lineWidthMultiplier: 0.1
+  index: 3
+  dotPosition: {x: 0, y: 0, z: 0}
+  textWindowPosition: {x: -0.30482066, y: -0.30156526, z: 0.41969416}
   labels: []
-  labelText: aaa
-  labelTexts: []
-  dotPosition: []
-  textWindowPosition: []
 --- !u!64 &1639995265
 MeshCollider:
   m_ObjectHideFlags: 0
