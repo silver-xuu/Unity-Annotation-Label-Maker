@@ -39,6 +39,8 @@ public class LabelScript : MonoBehaviour
 
         labelPrefab = Resources.Load<GameObject>("Prefabs/Label") as GameObject;
         labels = new List<LabelTextManager>();
+        upperText = "";
+        bottomText = "";
     }
 
     public void ChangeLabelPrefab()

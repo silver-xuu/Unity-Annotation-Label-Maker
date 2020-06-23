@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1819428896891132787}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.2923553, y: 0.100369036, z: -1.5848876}
-  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children:
   - {fileID: 943551960168731703}
   - {fileID: 1029514648933398144}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -238,7 +238,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -377,10 +377,10 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: -0.137, z: -0.415}
-  - {x: 1.4756513, y: 0.398768, z: -0.995571}
+  - {x: 1.488554, y: 0.4295608, z: -1.0813736}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.16
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -668,7 +668,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -793,7 +793,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6987953281913118803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.4934587}
+  m_LocalPosition: {x: 0, y: 0, z: -1.493458}
   m_LocalScale: {x: 0.19500004, y: 0.19500004, z: 0.19500004}
   m_Children: []
   m_Father: {fileID: 1029514648933398144}
@@ -801,7 +801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.27860653, y: 0.067557044}
+  m_AnchoredPosition: {x: 0.27860737, y: 0.0675571}
   m_SizeDelta: {x: 0.04, y: 0.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7686712844822160357
@@ -886,7 +886,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -954,7 +954,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -1024,9 +1024,9 @@ MonoBehaviour:
     dotPosition: {x: 0, y: 0, z: 0}
     textWindowPosition: {x: 0, y: 0, z: 0}
     isLabelDisplayed: 0
-    dotSize: 0.14
-    textWindowSize: 0.53
-    lineWidthMultiplier: 0.1
+    dotSize: 0.01
+    textWindowSize: 0.04
+    lineWidthMultiplier: 0.16
     textColor: {x: 0, y: 0, z: 0, w: 1}
   upperTextmesh: {fileID: 2614301631362505929}
   bottomTextmesh: {fileID: 3679441005073301422}
@@ -1063,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 8680261474816176820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.1970447, y: -0.46821097, z: -0.9128876}
-  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 6407536604453311694}
   m_Father: {fileID: 3131513498710064877}
@@ -1086,7 +1086,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bef7151847c40e1428e80f459f90a12e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -65,8 +65,8 @@ public class LabelTextManagerEditor : Editor
         #region Sizes_Field
         EditorGUI.BeginChangeCheck();
 
-        mytarget.thisLabel.dotSize = EditorGUILayout.Slider("Label Dot Size",mytarget.thisLabel.dotSize, 0.1f, 50f);
-        mytarget.thisLabel.textWindowSize = EditorGUILayout.Slider("Text Window Size",mytarget.thisLabel.textWindowSize, 0.1f, 50f);
+        mytarget.thisLabel.dotSize = EditorGUILayout.Slider("Label Dot Size",mytarget.thisLabel.dotSize, 0.001f, 50f);
+        mytarget.thisLabel.textWindowSize = EditorGUILayout.Slider("Text Window Size",mytarget.thisLabel.textWindowSize, 0.001f, 50f);
         mytarget.thisLabel.lineWidthMultiplier = EditorGUILayout.Slider("Line Width",mytarget.thisLabel.lineWidthMultiplier, 0.1f, 50f);
         if (GUI.changed)
         {

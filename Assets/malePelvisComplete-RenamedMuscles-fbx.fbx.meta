@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 60b28ad7c4dc81c4b82d7d17f62942ec
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 20by20mmChip
+    100002: 20by20mmChip.001
+    100004: 20by20mmChip.002
+    100006: 20by20mmChip.003
+    100008: 20by20mmChip.004
+    100010: 20by20mmChip.005
+    100012: 2Magnets+Clearance
+    100014: 2Magnets+Clearance.001
+    100016: 2Magnets+Clearance.002
+    100018: 2Magnets+Clearance.003
+    100020: 2Magnets+Clearance.004
+    100022: 2Magnets+Clearance.005
+    100024: Camera
+    100026: Coccygeus
+    100028: Iliacus
+    100030: L-AnteriorSuperiorIliacSpine
+    100032: L-Femur
+    100034: L-GreaterSciaticForamen
+    100036: L-IliacCrest
+    100038: L-IschialSpine
+    100040: L-IschialTuberosity
+    100042: L-LesserSciaticForamen
+    100044: L-ObturatorCanal
+    100046: L-ObturatorForamen
+    100048: L-PubicTubercle
+    100050: LevatorAni
+    100052: LightsBottom
+    100054: LightsRight
+    100056: LightsTop
+    100058: Male_Pelvis
+    100060: //RootNode
+    100062: ObturatorInternus
+    100064: PerinealNerve
+    100066: Piriformis
+    100068: 'PubicSymphysis '
+    100070: R-AnteriorSuperiorIliacSpine
+    100072: R-Femur
+    100074: R-GMin[dont put in]
+    100076: R-GreaterSciaticForamen
+    100078: R-IliacCrest
+    100080: R-IschialSpine
+    100082: R-IschialTuberosity
+    100084: R-LesserSciaticForamen
+    100086: R-ObturatorCanal
+    100088: R-ObturatorForamen
+    100090: R-PubicTubercle
+    100092: SacrospinousLigament
+    100094: Sacrotuberous Ligament
+    400000: 20by20mmChip
+    400002: 20by20mmChip.001
+    400004: 20by20mmChip.002
+    400006: 20by20mmChip.003
+    400008: 20by20mmChip.004
+    400010: 20by20mmChip.005
+    400012: 2Magnets+Clearance
+    400014: 2Magnets+Clearance.001
+    400016: 2Magnets+Clearance.002
+    400018: 2Magnets+Clearance.003
+    400020: 2Magnets+Clearance.004
+    400022: 2Magnets+Clearance.005
+    400024: Camera
+    400026: Coccygeus
+    400028: Iliacus
+    400030: L-AnteriorSuperiorIliacSpine
+    400032: L-Femur
+    400034: L-GreaterSciaticForamen
+    400036: L-IliacCrest
+    400038: L-IschialSpine
+    400040: L-IschialTuberosity
+    400042: L-LesserSciaticForamen
+    400044: L-ObturatorCanal
+    400046: L-ObturatorForamen
+    400048: L-PubicTubercle
+    400050: LevatorAni
+    400052: LightsBottom
+    400054: LightsRight
+    400056: LightsTop
+    400058: Male_Pelvis
+    400060: //RootNode
+    400062: ObturatorInternus
+    400064: PerinealNerve
+    400066: Piriformis
+    400068: 'PubicSymphysis '
+    400070: R-AnteriorSuperiorIliacSpine
+    400072: R-Femur
+    400074: R-GMin[dont put in]
+    400076: R-GreaterSciaticForamen
+    400078: R-IliacCrest
+    400080: R-IschialSpine
+    400082: R-IschialTuberosity
+    400084: R-LesserSciaticForamen
+    400086: R-ObturatorCanal
+    400088: R-ObturatorForamen
+    400090: R-PubicTubercle
+    400092: SacrospinousLigament
+    400094: Sacrotuberous Ligament
+    2000000: Camera
+    2100000: No Name
+    2100002: Muscle
+    2100004: Material.004
+    2100006: Bone
+    2100008: Material
+    2100010: Nerve
+    2100012: Material.002
+    2300000: 20by20mmChip
+    2300002: 20by20mmChip.001
+    2300004: 20by20mmChip.002
+    2300006: 20by20mmChip.003
+    2300008: 20by20mmChip.004
+    2300010: 20by20mmChip.005
+    2300012: 2Magnets+Clearance
+    2300014: 2Magnets+Clearance.001
+    2300016: 2Magnets+Clearance.002
+    2300018: 2Magnets+Clearance.003
+    2300020: 2Magnets+Clearance.004
+    2300022: 2Magnets+Clearance.005
+    2300024: Coccygeus
+    2300026: Iliacus
+    2300028: L-AnteriorSuperiorIliacSpine
+    2300030: L-Femur
+    2300032: L-GreaterSciaticForamen
+    2300034: L-IliacCrest
+    2300036: L-IschialSpine
+    2300038: L-IschialTuberosity
+    2300040: L-LesserSciaticForamen
+    2300042: L-ObturatorCanal
+    2300044: L-ObturatorForamen
+    2300046: L-PubicTubercle
+    2300048: LevatorAni
+    2300050: LightsBottom
+    2300052: LightsRight
+    2300054: LightsTop
+    2300056: Male_Pelvis
+    2300058: ObturatorInternus
+    2300060: PerinealNerve
+    2300062: Piriformis
+    2300064: 'PubicSymphysis '
+    2300066: R-AnteriorSuperiorIliacSpine
+    2300068: R-Femur
+    2300070: R-GMin[dont put in]
+    2300072: R-GreaterSciaticForamen
+    2300074: R-IliacCrest
+    2300076: R-IschialSpine
+    2300078: R-IschialTuberosity
+    2300080: R-LesserSciaticForamen
+    2300082: R-ObturatorCanal
+    2300084: R-ObturatorForamen
+    2300086: R-PubicTubercle
+    2300088: SacrospinousLigament
+    2300090: Sacrotuberous Ligament
+    3300000: 20by20mmChip
+    3300002: 20by20mmChip.001
+    3300004: 20by20mmChip.002
+    3300006: 20by20mmChip.003
+    3300008: 20by20mmChip.004
+    3300010: 20by20mmChip.005
+    3300012: 2Magnets+Clearance
+    3300014: 2Magnets+Clearance.001
+    3300016: 2Magnets+Clearance.002
+    3300018: 2Magnets+Clearance.003
+    3300020: 2Magnets+Clearance.004
+    3300022: 2Magnets+Clearance.005
+    3300024: Coccygeus
+    3300026: Iliacus
+    3300028: L-AnteriorSuperiorIliacSpine
+    3300030: L-Femur
+    3300032: L-GreaterSciaticForamen
+    3300034: L-IliacCrest
+    3300036: L-IschialSpine
+    3300038: L-IschialTuberosity
+    3300040: L-LesserSciaticForamen
+    3300042: L-ObturatorCanal
+    3300044: L-ObturatorForamen
+    3300046: L-PubicTubercle
+    3300048: LevatorAni
+    3300050: LightsBottom
+    3300052: LightsRight
+    3300054: LightsTop
+    3300056: Male_Pelvis
+    3300058: ObturatorInternus
+    3300060: PerinealNerve
+    3300062: Piriformis
+    3300064: 'PubicSymphysis '
+    3300066: R-AnteriorSuperiorIliacSpine
+    3300068: R-Femur
+    3300070: R-GMin[dont put in]
+    3300072: R-GreaterSciaticForamen
+    3300074: R-IliacCrest
+    3300076: R-IschialSpine
+    3300078: R-IschialTuberosity
+    3300080: R-LesserSciaticForamen
+    3300082: R-ObturatorCanal
+    3300084: R-ObturatorForamen
+    3300086: R-PubicTubercle
+    3300088: SacrospinousLigament
+    3300090: Sacrotuberous Ligament
+    4300000: L-ObturatorCanal
+    4300002: R-ObturatorCanal
+    4300004: L-LesserSciaticForamen
+    4300006: L-GreaterSciaticForamen
+    4300008: R-LesserSciaticForamen
+    4300010: R-GreaterSciaticForamen
+    4300012: L-ObturatorForamen
+    4300014: R-ObturatorForamen
+    4300016: R-PubicTubercle
+    4300018: L-PubicTubercle
+    4300020: L-AnteriorSuperiorIliacSpine
+    4300022: R-AnteriorSuperiorIliacSpine
+    4300024: L-IliacCrest
+    4300026: R-IliacCrest
+    4300028: 'PubicSymphysis '
+    4300030: R-IschialTuberosity
+    4300032: R-IschialSpine
+    4300034: L-IschialSpine
+    4300036: L-IschialTuberosity
+    4300038: LevatorAni
+    4300040: LightsRight
+    4300042: R-Femur
+    4300044: L-Femur
+    4300046: LightsBottom
+    4300048: LightsTop
+    4300050: Coccygeus
+    4300052: SacrospinousLigament
+    4300054: 2Magnets+Clearance
+    4300056: 20by20mmChip
+    4300058: Male_Pelvis
+    4300060: ObturatorInternus
+    4300062: Piriformis
+    4300064: Iliacus
+    4300066: R-GMin[dont put in]
+    4300068: 2Magnets+Clearance.001
+    4300070: 2Magnets+Clearance.002
+    4300072: 2Magnets+Clearance.003
+    4300074: 2Magnets+Clearance.004
+    4300076: 2Magnets+Clearance.005
+    4300078: 20by20mmChip.001
+    4300080: 20by20mmChip.002
+    4300082: 20by20mmChip.003
+    4300084: 20by20mmChip.004
+    4300086: 20by20mmChip.005
+    4300088: PerinealNerve
+    4300090: Sacrotuberous Ligament
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

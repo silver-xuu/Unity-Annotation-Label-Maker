@@ -40,8 +40,8 @@ public class LabelScriptEditor : Editor
         //change the width of indicator line
         EditorGUI.BeginChangeCheck();
         mytarget.lineWidthMultiplier = EditorGUILayout.Slider("Indicator Line width", mytarget.lineWidthMultiplier, 0.1f, 5f, GUILayout.Width(200));
-        mytarget.dotSize =EditorGUILayout.Slider("Dot Size multiplier", mytarget.dotSize, 0.1f, 50f, GUILayout.Width(200));
-        mytarget.textWindowSize= EditorGUILayout.Slider("Text Window Size multiplier", mytarget.textWindowSize, 0.1f, 50f, GUILayout.Width(200));
+        mytarget.dotSize =EditorGUILayout.Slider("Dot Size multiplier", mytarget.dotSize, 0.001f, 50f, GUILayout.Width(200));
+        mytarget.textWindowSize= EditorGUILayout.Slider("Text Window Size multiplier", mytarget.textWindowSize, 0.001f, 50f, GUILayout.Width(200));
         mytarget.textColor = EditorGUILayout.ColorField("Text Color", mytarget.textColor, GUILayout.Width(200));
         if (GUI.changed)
         {
