@@ -140,5 +140,14 @@ public class LabelTextManager : MonoBehaviour
             parent.labels.Remove(this);
         DestroyImmediate(this.gameObject);
     }
+    public void ReloadLabel()
+    {
+        thisLabel.index = int.Parse(indexTextmesh.text);
+        thisLabel.upperText = upperTextmesh.text;
+        thisLabel.bottomText = bottomTextmesh.text;
+        thisLabel.dotPosition = dotGroup.transform.position;
+        thisLabel.textWindowPosition = textGroup.transform.position;
+        thisLabel.isLabelDisplayed = textGroup.activeSelf;
+    }
  
 }

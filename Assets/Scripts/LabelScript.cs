@@ -112,6 +112,7 @@ public class LabelScript : MonoBehaviour
     public void ReloadAllLabelInChildren()
     {
         labels = GetComponentsInChildren<LabelTextManager>(true).ToList();
+        labels.ForEach(x => x.ReloadLabel());
         Debug.Log(labels.Count + " labels found");
         
     }

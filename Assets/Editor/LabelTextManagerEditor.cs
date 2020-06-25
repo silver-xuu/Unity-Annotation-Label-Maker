@@ -111,6 +111,10 @@ public class LabelTextManagerEditor : Editor
         if (GUILayout.Button("Delete This Label", GUILayout.Height(30), GUILayout.Width(200)))
             mytarget.DeleteLabel();
         #endregion
+        #region Reload_Button
+        if (GUILayout.Button("Reload This Label", GUILayout.Height(30), GUILayout.Width(200)))
+            mytarget.ReloadLabel();
+        #endregion
     }
 
 }
